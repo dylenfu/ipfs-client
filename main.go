@@ -18,5 +18,23 @@ func main() {
 		println("Hello IPFS!")
 	case "sub":
 		listener.Listen()
+	case "struct":
+		t := &Tee{3, "hello"}
+		println(t.getTeeNum())
+		println(t.getTeeName())
 	}
+}
+
+type Tee struct {
+	a  uint
+	b  string
+}
+
+
+func (tee *Tee)  getTeeNum() uint {
+	return tee.a
+}
+
+func (tee Tee) getTeeName() string {
+	return tee.b
 }
