@@ -22,6 +22,9 @@ func main() {
 		t := &Tee{3, "hello"}
 		println(t.getTeeNum())
 		println(t.getTeeName())
+
+	case "channel":
+		channeldemo()
 	}
 }
 
@@ -37,4 +40,20 @@ func (tee *Tee)  getTeeNum() uint {
 
 func (tee Tee) getTeeName() string {
 	return tee.b
+}
+
+func channeldemo() {
+	messages := make(chan string)
+
+
+	msg := "hi"
+	go func() {
+		messages <- msg
+	}()
+
+	select {
+	case msg := <-messages:
+		println("received message", msg)
+	}
+
 }
