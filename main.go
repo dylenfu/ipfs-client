@@ -34,7 +34,7 @@ func main() {
 	flag.Parse()
 
 	switch *testcase {
-	case "hi":
+	case "hi-ipfs":
 		println("Hello IPFS!")
 
 	case "ipfs-sub":
