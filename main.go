@@ -35,7 +35,7 @@ func main() {
 
 	switch *testcase {
 	case "hi-ipfs":
-		println("Hello IPFS!")
+		println("Hello IPFS...")
 
 	case "ipfs-sub":
 		listener.Listen()
